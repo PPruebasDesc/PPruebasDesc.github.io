@@ -4,7 +4,7 @@ import {showRegister} from "./js/CtrlBotones"
 import {showLogin} from "./js/CtrlBotones"
 import {login} from "./js/CtrlBotones"
 import {register} from "./js/CtrlBotones"
-import {showLogin} from "./js/CtrlBotones"
+
 
 
 
@@ -15,28 +15,27 @@ import {showLogin} from "./js/CtrlBotones"
 
 
 // Firebase imports
-import { GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
-import { auth } from "./firebase.js";
-import { showMessage } from "./showMessage.js";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
-const googleButton = document.querySelector("#googleLogin");
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://firebase.google.com/docs/web/learn-more#config-object
+ // Your web app's Firebase configuration
 
-googleButton.addEventListener("click", async (e) => {
-  e.preventDefault();
 
-  const provider = new GoogleAuthProvider();
-  try {
-    const credentials = await signInWithPopup(auth, provider)
-    console.log(credentials);
-    console.log("google sign in");
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+// Initialize Firebase Authentication and get a reference to the service
+const auth = getAuth(app);
+
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
     
-    // Close the login modal
-    const modalInstance = bootstrap.Modal.getInstance(googleButton.closest('.modal'));
-    modalInstance.hide();
-
-    // show welcome message
-    showMessage("Welcome " + credentials.user.displayName);
-  } catch (error) {
-    console.log(error);
-  }
-});
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+S
+    const analytics = getAnalytics(app);
