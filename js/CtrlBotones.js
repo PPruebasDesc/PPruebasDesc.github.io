@@ -7,19 +7,19 @@ function showLogin() {
     document.getElementById("login-section").style.display = "none";
     document.getElementById("register-section").style.display = "block";
   }
-  
   function login() {
     // Aquí puedes agregar la lógica para realizar el inicio de sesión
-    var username = document.getElementById("username").value;
+    var usernameOrEmail = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     // Ejemplo de una función de validación básica
-    if (username === "usuario" && password === "contraseña") {
+    if ((usernameOrEmail === "usuario" || usernameOrEmail === "correo@example.com") && password === "contraseña") {
       alert("Inicio de sesión exitoso");
       // Aquí puedes redirigir al usuario a la sección correspondiente
     } else {
       alert("Nombre de usuario o contraseña incorrectos");
     }
   }
+  
   
   function register() {
     // Aquí puedes agregar la lógica para realizar el registro de usuario

@@ -1,9 +1,9 @@
 
 // js Imports
 import {showRegister} from "./js/CtrlBotones"
-
-
-
+import {showLogin} from "./js/CtrlBotones"
+import {login} from "./js/CtrlBotones"
+import {register} from "./js/CtrlBotones"
 
 
 
