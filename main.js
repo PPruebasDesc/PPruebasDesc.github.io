@@ -4,19 +4,22 @@ import {showRegister} from "./js/CtrlBotones"
 import {showLogin} from "./js/CtrlBotones"
 import {login} from "./js/CtrlBotones"
 import {register} from "./js/CtrlBotones"
+
+//import nodemailer
 import {nodemailer} from "./js/CtrlBotones"
 
 
-
-
-
-
-
-
-
 // Firebase imports
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { InitializelizeApp } from "firebase/app";
+import { GoogleAuthProvideruth } from "firebase/auth";
+import { } from "firebase/auth";
+
+
+
+
+
+
+
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
