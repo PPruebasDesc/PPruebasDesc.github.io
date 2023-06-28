@@ -1,44 +1,28 @@
+// JS Imports
+import { showRegister, showLogin, login, register } from "./js/CtrlBotones";
 
-// js Imports
-import {showRegister} from "./js/CtrlBotones"
-import {showLogin} from "./js/CtrlBotones"
-import {login} from "./js/CtrlBotones"
-import {register} from "./js/CtrlBotones"
-
-//import nodemailer
-import {nodemailer} from "./js/CtrlBotones"
-
+// Import nodemailer
+import nodemailer from "nodemailer";
 
 // Firebase imports
-import { InitializelizeApp } from "firebase/app";
-import { GoogleAuthProvideruth } from "firebase/auth";
-import { } from "firebase/auth";
+import { initializeApp} from "firebase/app";
+import { getAuth, signInWithPopup } from "firebase/auth";
+import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore";
 
+// TODO: Reemplaza la siguiente configuración con la configuración de tu proyecto Firebase
+const firebaseConfig = {
+  // Tu configuración de Firebase aquí
+};
 
-
-
-
-
-
-
-// TODO: Replace the following with your app's Firebase project configuration
-// See: https://firebase.google.com/docs/web/learn-more#config-object
- // Your web app's Firebase configuration
-
-
-// Initialize Firebase
+// Inicializa Firebase
 const app = initializeApp(firebaseConfig);
 
-
-// Initialize Firebase Authentication and get a reference to the service
+// Inicializa la autenticación de Firebase y obtén una referencia al servicio
 const auth = getAuth(app);
 
-    // Import the functions you need from the SDKs you need
-    import { signInWithPopupializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-    import { GoogleAuthProvideruthAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
-    import { getFirestore } from "firebase/firestore";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-S
-    const analytics = getAnalytics(app);
+// Importa las funciones necesarias de los SDK que necesites
+import { signInWithPopup } from "firebase/auth";
+import { getAnalytics } from "firebase/analytics";
+
+const analytics = getAnalytics(app);
