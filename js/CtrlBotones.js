@@ -37,6 +37,9 @@ function showLogin() {
 
 // Registrar perfil google
 function registrargoogle() {
+
+ 
+  }
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         // El usuario ya ha iniciado sesión, puedes redirigirlo o realizar otras acciones necesarias.
@@ -65,5 +68,5 @@ function registrargoogle() {
           });
       }
     });
-  }
+  
   
