@@ -6,10 +6,8 @@
 </head>
 <body>
   <div class="container">
-    <button class="login-button" onclick="login()">Iniciar sesión</button>
-
-    <button class="register-button" onclick="Register()">Registrarse</button>
-
+    <button class="login-button" onclick="showLogin()">Iniciar sesión</button>
+    <button class="register-button" onclick="showRegister()">Registrarse</button>
   </div>
 
   <div id="login-section" class="section">
@@ -27,13 +25,11 @@
     <form>
       <!-- Aquí van los campos de registro (por ejemplo, nombre de usuario, correo electrónico y contraseña) -->
       <input type="text" placeholder="Nombre de usuario" id="reg-username">
-      <input type="email" placeholder="Correo electrónico" id="reg-email">
+      <input type="email" placeholder="Correo electrónico" id="email">
       <input type="password" placeholder="Contraseña" id="reg-password">
       <button type="submit" onclick="register()">Enviar</button>
     </form>
   </div>
-
-
 
 
 <script src="Css/styles.css"></script>
