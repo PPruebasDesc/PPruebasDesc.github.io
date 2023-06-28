@@ -1,8 +1,8 @@
 // JS Imports
-import { showRegister, showLogin, login, register } from "./js/CtrlBotones";
+import { showRegister, showLogin, login, register, google, GoogleAuthProvider } from "./js/CtrlBotones";
 
 // Import nodemailer
-import nodemailer from "nodemailer";
+import{sendMail,nodemailer,}  from "nodemailer";
 
 // Firebase imports
 import { initializeApp} from "firebase/app";

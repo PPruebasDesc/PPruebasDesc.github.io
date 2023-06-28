@@ -6,15 +6,16 @@
 </head>
 <body>
   <div class="container">
-    <button class="login-button" onclick="showLogin()">Iniciar sesión</button>
-    <button class="register-button" onclick="showRegister()">Registrarse</button>
+    <button id="login-button" class="login-button" onclick="showLogin()">Iniciar sesión</button>
+    <button id="register-button"class="register-button" onclick="showRegister()">Registrarse</button>
+    <button id="google"class="register-button" onclick="google()">Registrarse google</button>
   </div>
 
   <div id="login-section" class="section">
     <h2>Iniciar sesión</h2>
     <form>
       <!-- Aquí van los campos de inicio de sesión (por ejemplo, nombre de usuario y contraseña) -->
-      <input type="text" placeholder="Nombre de usuario" id="username">
+      <input type="user" placeholder="Nombre de usuario" id="username">
       <input type="password" placeholder="Contraseña" id="password">
       <button type="submit" onclick="login()">Enviar</button>
     </form>
@@ -31,7 +32,7 @@
     </form>
   </div>
 
-
+<script src="https://cdn.jsdelivr.net/npm/nodemailer@6.6.3/dist/umd/nodemailer.min.js"></script>
 <script src="Css/styles.css"></script>
 <script src="js/CtrlBotones.js"></script>
 <script src="main.js"></script>
