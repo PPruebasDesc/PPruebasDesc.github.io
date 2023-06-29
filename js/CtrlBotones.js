@@ -8,44 +8,31 @@ function showRegister() {
   document.getElementById("register-section").style.display = "block";
 }
 
-function register() {
-  var regUsername = document.getElementById("reg-username").value;
-  var email = document.getElementById("email").value;
-  var regPassword = document.getElementById("reg-password").value;
-  
-  if (regUsername && email && regPassword) {
-    alert("Registro exitoso");
-  } else {
-    alert("Por favor, complete todos los campos");
-  }
-}
+import { GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
+import { auth } from "./firebase.js";
+import { showMessage } from "./showMessage.js";
 
-function login() {
-  var usernameOrEmail = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-  
-  if ((usernameOrEmail === "usuario" || usernameOrEmail === "correo@example.com") && password === "contraseña") {
-    alert("Inicio de sesión exitoso");
-  } else {
-    alert("Nombre de usuario o contraseña incorrectos");
-  }
-}
+const googleButton = document.querySelector("#googleLogin");
 
-function google() {
-  var provider = new firebase.auth.GoogleAuthProvider();
-  
-  firebase.auth().signInWithPopup(provider)
-    .then((result) => {
-      var user = result.user;
-      var successMessage = "Inicio de sesión exitoso con Google";
-      console.log(successMessage);
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = "Error de autenticación con Google: " + error.message;
-      console.log(errorMessage);
-    });
-}
+googleButton.addEventListener("click", async (e) => {
+  e.preventDefault();
+
+  const provider = new GoogleAuthProvider();
+  try {
+    const credentials = await signInWithPopup(auth, provider)
+    console.log(credentials);
+    console.log("google sign in");
+    
+    // Close the login modal
+    const modalInstance = bootstrap.Modal.getInstance(googleButton.closest('.modal'));
+    modalInstance.hide();
+
+    // show welcome message
+    showMessage("Welcome " + credentials.user.displayName);
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 document.getElementById("login-button").addEventListener("click", showLogin);
 document.getElementById("register-button").addEventListener("click", showRegister);
